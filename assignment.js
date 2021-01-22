@@ -12,7 +12,7 @@ function budgetCalculator(watch, phone, laptop) {
     var price = watch * 50 + phone * 100 + laptop * 500;
     return price;
 }
-// console.log(budgetCalculator(4,3,1));
+// console.log(budgetCalculator(4,3,2));
 
 // Hotel Cost Calculation
 function hotelCost(days) {
@@ -33,24 +33,23 @@ function hotelCost(days) {
     }
     return totalCost;
 }
-// var result = hotelCost(25)
+// var result = hotelCost(2)
 // console.log(result);
 
 
 //Mega Friend Sorting
 
-// friend = ["Kamal", "Jamall", "Rahimmm", "Kashemmm", "etc", "Jamil"];
+// friend = ["Kamal", "Jamall", "Rahimm", "Kashemmm", "etc", "Jamil"];
 function megaFriend(name) {
     var myMegaFriend = name[0];
-    for (let i = 0; i < name.length; i++) {
-        var element = name[i];
-        if (name[i].length > name[0].length) {
+    for (var i = 0; i < name.length; i++) {
+        if (name[i].length > myMegaFriend.length) {
             myMegaFriend = name[i];
         }
     }
     return myMegaFriend;
 }
-console.log(megaFriend(friend));
+// console.log(megaFriend(friend));
 
 
 
