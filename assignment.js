@@ -1,55 +1,84 @@
 // Kilometer to Meter Conversion
 function kilometerToMeter(num) {
-    var meter = num * 1000;
-    return meter;
+    if (typeof (num) == 'number') {
+        if (num >= 0) {
+            var meter = num * 1000;
+            return meter;
+        }
+        else {
+            return 'Please enter a positive Number.';
+        }
+    }
+    else {
+        return "It is a String. Please input a positive Number.";
+    }
 }
-// var result = kilometerToMeter(5.3);
-// console.log(result);
-// console.log(kilometerToMeter(3.33));
+
 
 // Budget Calculator
 function budgetCalculator(watch, phone, laptop) {
-    var price = watch * 50 + phone * 100 + laptop * 500;
-    return price;
+    if (typeof (watch, phone, laptop) == 'number') {
+        if (watch >= 0 && phone >= 0 && laptop >= 0) {
+            var price = watch * 50 + phone * 100 + laptop * 500;
+            return price;
+        }
+        else {
+            return 'Please enter positive Numbers.';
+        }
+    }
+    else {
+        return "Input are Strings. Please input a positive Number.";
+    }
 }
-// console.log(budgetCalculator(4,3,2));
+
 
 // Hotel Cost Calculation
 function hotelCost(days) {
     var totalCost = 0;
-    if (days <= 10) {
-        totalCost = 100 * days;
-    }
-    else if (days <= 20) {
-        var firstTenDays = 100 * 10;
-        var tenToTwentyDays = (days - 10) * 80;
-        totalCost = firstTenDays + tenToTwentyDays;
+    if (typeof (days == 'number')) {
+        if (days >= 0) {
+            if (days <= 10) {
+                totalCost = 100 * days;
+            }
+            else if (days <= 20) {
+                var firstTenDays = 100 * 10;
+                var tenToTwentyDays = (days - 10) * 80;
+                totalCost = firstTenDays + tenToTwentyDays;
+            }
+            else {
+                var firstTenDays = 100 * 10;
+                var tenToTwentyDays = 10 * 80;
+                var otherDays = (days - 20) * 50;
+                totalCost = firstTenDays + tenToTwentyDays + otherDays;
+            }
+        }
+        else {
+            return 'Please enter positive Numbers.';
+        }
     }
     else {
-        var firstTenDays = 100 * 10;
-        var tenToTwentyDays = 10 * 80;
-        var otherDays = (days - 20) * 50;
-        totalCost = firstTenDays + tenToTwentyDays + otherDays;
+        return "Please enter positive Numbers.";
     }
     return totalCost;
 }
-// var result = hotelCost(2)
-// console.log(result);
 
 
 //Mega Friend Sorting
-
-// friend = ["Kamal", "Jamall", "Rahimm", "Kashemmm", "etc", "Jamil"];
 function megaFriend(name) {
-    var myMegaFriend = name[0];
-    for (var i = 0; i < name.length; i++) {
-        if (name[i].length > myMegaFriend.length) {
-            myMegaFriend = name[i];
+    if (name.length > 0) {
+        var myMegaFriend = name[0];
+        for (var i = 0; i < name.length; i++) {
+            if (name[i].length > myMegaFriend.length) {
+                myMegaFriend = name[i];
+            }
         }
+    }
+    else {
+        return "Enter a valid array.";
     }
     return myMegaFriend;
 }
-// console.log(megaFriend(friend));
+
 
 
 
